@@ -57,6 +57,7 @@ th:nth-child(3), td:nth-child(3) { /* Scheduled Time */
 
 th:nth-child(4), td:nth-child(4) { /* Actions */
     width: 10%;
+    text-align: center;
 }
 
 
