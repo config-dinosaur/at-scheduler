@@ -1,0 +1,140 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.banner {
+    background-color: #48ce72;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.right-side {
+    text-align: right;
+}
+
+#current-date-time {
+font-weight: bold;
+}
+
+#timezone {
+font-weight: bold;
+color: white;
+margin-top: 5px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #f4f4f4;
+    white-space: nowrap; /* Prevents wrapping */
+}
+
+/* Set fixed widths for specific columns */
+th:nth-child(1), td:nth-child(1) { /* Job Number */
+    width: 15%;
+}
+
+th:nth-child(2), td:nth-child(2) { /* Command */
+    width: 55%;
+}
+
+th:nth-child(3), td:nth-child(3) { /* Scheduled Time */
+    width: 20%;
+}
+
+th:nth-child(4), td:nth-child(4) { /* Actions */
+    width: 10%;
+}
+
+
+.input-group {
+    display: flex; /* Enable flexbox */
+    align-items: center; /* Vertically center items */
+    margin-bottom: 10px; /* Space below the input group */
+}
+
+.input-group label {
+    margin-right: 10px; /* Space between label and inputs */
+}
+
+input[type="text"] {
+    width: 70%; /* Increase width for command input */
+    padding: 10px;
+    margin-right: 10px; /* Space between inputs and button */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type="datetime-local"] {
+    width: 15%; /* Reduce width for date/time input */
+    padding: 10px;
+    margin-right: 10px; /* Space between inputs and button */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #48ce72;
+    color: white;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transition */
+}
+
+button:hover {
+    background-color: #06a338;
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+#close {
+    cursor: pointer;
+}
+
+#remove-btn {
+    padding: 10px 15px;
+    background-color: #9b0714;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#remove-btn:hover {
+background-color: #bc0b1a;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}

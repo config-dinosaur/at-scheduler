@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>at Scheduler</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="banner" class="banner">
+        <h1>at Scheduler</h1>
+        <div class="right-side">
+            <div id="current-date-time"></div>
+            <div id="timezone"></div>
+        </div>
+    </div>
+    </br>
+    <table id="job-table">
+        <thead>
+            <tr>
+                <th>Job Number</th>
+                <th>Command</th>
+                <th>Scheduled Time</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Jobs will be populated here -->
+        </tbody>
+    </table>
+
+    <button id="add-job-btn">Add Job</button>
+
+    <div id="add-job-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Add Job</h2>
+            <div class="input-group">
+                <label for="job-command">Command:</label>
+                <input type="text" id="job-command" placeholder="Enter command here">
+                <label for="job-time">Scheduled Time:</label>
+                <input type="datetime-local" id="job-time">
+                <button id="submit-job">Schedule Job</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
