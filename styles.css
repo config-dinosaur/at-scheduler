@@ -62,27 +62,27 @@ th:nth-child(4), td:nth-child(4) { /* Actions */
 
 
 .input-group {
-    display: flex; /* Enable flexbox */
-    align-items: center; /* Vertically center items */
-    margin-bottom: 10px; /* Space below the input group */
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
 }
 
 .input-group label {
-    margin-right: 10px; /* Space between label and inputs */
+    margin-right: 10px;
 }
 
 input[type="text"] {
-    width: 70%; /* Increase width for command input */
+    width: 70%;
     padding: 10px;
-    margin-right: 10px; /* Space between inputs and button */
+    margin-right: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
 
 input[type="datetime-local"] {
-    width: 15%; /* Reduce width for date/time input */
+    width: 15%;
     padding: 10px;
-    margin-right: 10px; /* Space between inputs and button */
+    margin-right: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
@@ -94,13 +94,13 @@ button {
     font-weight: bold;
     border: none;
     cursor: pointer;
-    border-radius: 5px; /* Rounded corners */
-    transition: background-color 0.3s, transform 0.2s; /* Smooth transition */
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
 button:hover {
     background-color: #06a338;
-    transform: scale(1.05); /* Slightly enlarge on hover */
+    transform: scale(1.05);
 }
 
 #close {
