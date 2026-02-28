@@ -11,15 +11,9 @@ RUN apt-get update && \
 
 ENV TZ=UTC
 
-# Create a virtual environment for Python packages
 RUN python3 -m venv /venv
-
-# Ensure pip is updated
 RUN /venv/bin/pip install --upgrade pip
-
-# Install Flask in the virtual environment
 RUN /venv/bin/pip install --no-cache-dir Flask
-
 
 COPY index.html /static/index.html
 COPY styles.css /static/styles.css

@@ -13,6 +13,7 @@ def index():
     logger.info("Serving the main HTML page.")
     return send_from_directory('static', 'index.html')
 
+# API calls
 @app.route('/add', methods=['POST'])
 def schedule_job():
     job = request.json.get('command')

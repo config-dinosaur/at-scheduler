@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const hours = String(date.getHours()).padStart(2, '0');
         const minutes = String(date.getMinutes()).padStart(2, '0');
 
-        return `${year}-${month}-${day} ${hours}:${minutes}`;  // Formatting to 'YYYY-MM-DD HH:MM'
+        return `${year}-${month}-${day} ${hours}:${minutes}`;  // Formatting date time to 'YYYY-MM-DD HH:MM'
     };
 
     const updateCurrentDateTime = async () => {
