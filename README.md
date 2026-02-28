@@ -15,7 +15,6 @@ A simple job scheduling application using Flask and the `at` command. This appli
 - **at Command**: Used for scheduling jobs on Unix-like operating systems.
 - **HTML/CSS/JavaScript**: For the frontend interface.
 
-## API endpoints 
 ## API Endpoints
 
 <table>
