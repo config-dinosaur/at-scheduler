@@ -13,14 +13,14 @@ def index():
     logger.info("Serving the main HTML page.")
     return send_from_directory('static', 'index.html')
 
-@app.route('/schedule', methods=['POST'])
+@app.route('/add', methods=['POST'])
 def schedule_job():
-    job = request.json.get('job')
+    job = request.json.get('command')
     time = request.json.get('time')  # e.g., "now + 1 minute"
 
     if not job or not time:
-        logger.warning("Job and time are required.")
-        return jsonify({"error": "Job and time are required"}), 400
+        logger.warning("Command and time are required.")
+        return jsonify({"error": "Command and time are required"}), 400
 
     # Schedule the job using `at`
     command = f'echo "{job}" | at {time}'
@@ -32,7 +32,7 @@ def schedule_job():
         logger.error(f"Error scheduling job: {str(e)}")
         return jsonify({"error": str(e)}), 500
 
-@app.route('/jobs', methods=['GET'])
+@app.route('/get-jobs', methods=['GET'])
 def get_pending_jobs():
     try:
         # Run the atq command to get the list of jobs
