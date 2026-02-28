@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ job: command, time: scheduledTime })
+            body: JSON.stringify({ command: command, time: scheduledTime })
         });
         return await response.json();
     };
