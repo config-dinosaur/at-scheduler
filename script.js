@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const timezoneElem = document.getElementById('timezone'); // Element to display timezone
 
     const fetchJobs = async () => {
-        const response = await fetch('/jobs');
+        const response = await fetch('/get-jobs');
         const jobs = await response.json();
         jobTableBody.innerHTML = ''; // Clear existing rows
         jobs.forEach(job => {
@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     const addJob = async (command, scheduledTime) => {
-        const response = await fetch('/schedule', {
+        const response = await fetch('/add', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
