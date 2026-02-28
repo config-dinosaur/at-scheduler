@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const timezoneElem = document.getElementById('timezone'); // Element to display timezone
 
     const fetchJobs = async () => {
-        const response = await fetch('/jobs');
+        const response = await fetch('/get-jobs');
         const jobs = await response.json();
         jobTableBody.innerHTML = ''; // Clear existing rows
         jobs.forEach(job => {
@@ -62,12 +62,12 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     const addJob = async (command, scheduledTime) => {
-        const response = await fetch('/schedule', {
+        const response = await fetch('/add', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ job: command, time: scheduledTime })
+            body: JSON.stringify({ command: command, time: scheduledTime })
         });
         return await response.json();
     };
@@ -117,8 +117,14 @@ document.addEventListener('DOMContentLoaded', function() {
     jobTableBody.addEventListener('click', async (e) => {
         if (e.target.classList.contains('remove-btn')) {
             const jobNumber = e.target.dataset.jobNumber;
-            await fetch(`/remove/${jobNumber}`, { method: 'DELETE' });
-            fetchJobs();
+
+            // Show confirmation dialog
+            const confirmRemoval = confirm(`Are you sure you want to remove job number ${jobNumber}?`);
+
+            if (confirmRemoval) {
+                await fetch(`/remove/${jobNumber}`, { method: 'DELETE' });
+                fetchJobs();
+            }
         }
     });
 
