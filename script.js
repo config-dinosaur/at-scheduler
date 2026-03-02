@@ -11,6 +11,10 @@ document.addEventListener('DOMContentLoaded', function() {
         const response = await fetch('/get-jobs');
         const jobs = await response.json();
         jobTableBody.innerHTML = ''; // Clear existing rows
+
+        // Sort jobs by scheduled time
+        jobs.sort((a, b) => new Date(a.time) - new Date(b.time));
+
         jobs.forEach(job => {
             const row = document.createElement('tr');
             row.innerHTML = `
